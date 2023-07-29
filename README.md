@@ -149,4 +149,18 @@ private void LiJiJiHuo_Click(object sender, global::System.Windows.RoutedEventAr
 
 ```
 
+注意：最新版的启动器使用IntelliLock加壳，反编译的时候出现命名编译错误，只需要删除反混淆生成的代码，同时修改LiJiJiHuo_Click()函数，不需要修改jianceAqidong()函数。
+
+```c#
+public partial class JiHuo : CustomDialog, IComponentConnector
+	{
+		private void LiJiJiHuo_Click(object sender, RoutedEventArgs e)
+		{
+			this.metroWindow_0.HideMetroDialogAsync(this, null);
+			this.method_0();
+			this.method_5();
+		}
+	}
+```
+
 不要忘记保存！！！
