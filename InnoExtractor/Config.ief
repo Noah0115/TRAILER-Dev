@@ -1,0 +1,20 @@
+﻿[General]
+FormMaximizado=0
+Idioma=Chinese Simplified (简体中文)
+OptimizarCompVT=1
+ExtraccionArchivos=1
+ExtraccionFormato=1
+IndicarArchEncriptados=1
+ExtraccionAbrirUbicacion=1
+MostrarCategorias=1
+LimpiarAppCacheAlSalir=1
+FormPosSuperior=242
+FormPosIzquierda=112
+ListaTamColumna1=180
+ListaTamColumna2=80
+ListaTamColumna3=105
+ListaTamColumna4=350
+FormTamAncho=751
+FormTamAlto=586
+RutaBaseExtraccion=E:\
+
