@@ -132,3 +132,97 @@ public partial class JiHuo : CustomDialog, IComponentConnector
 
 
 其中{app}目录即是游戏目录，至此方法二结束。
+
+## ④反混淆失败以及反编译的源码是旧版本启动器源码
+
+使用NETReactor中的NETReactorSlayer
+
+![image-20230924210608762](http://sapic.lyh27.top/static/upload/admin/image-20230924210608762.png)
+
+框选部分点击后，取消选择Namespaces与Types
+
+示例：
+
+用Dnspy打开反混淆后的exe，找到vjm3YHFLvfx5BMWCFR(不一定叫这个名，因为没有反混淆，所以需要自行每个去分析代码逻辑)，在其中随便找一个点击按钮函数， 函数内执行method_8()。
+
+注：找的过程中，可以看类中有没有KaiShiYouXi_Click()这个函数，如果有，那么大概率激活解压函数就在这个类当中
+
+例如为存档菜单绑定解压事件：
+![image-20230924210833694](http://sapic.lyh27.top/static/upload/admin/image-20230924210833694.png)
+
+编译后保存模块时，如果报错：
+![image-20230924210857485](http://sapic.lyh27.top/static/upload/admin/image-20230924210857485.png)
+
+则需要保存模块时这样设置：
+
+
+![image-20230924211000106](http://sapic.lyh27.top/static/upload/admin/image-20230924211000106.png)
+
+还有一种情况：
+
+形如：
+
+```c#
+// xghqTGbJNBVtk1gwKr.DnaDt1vtaWsoQqvuWr
+private void method_7(object sender, global::System.Windows.RoutedEventArgs e)
+{
+	global::xghqTGbJNBVtk1gwKr.DnaDt1vtaWsoQqvuWr.string_19 = this.MiMaKuang.Password.Replace(" ", "");
+	if (global::xghqTGbJNBVtk1gwKr.DnaDt1vtaWsoQqvuWr.string_19 == (global::xghqTGbJNBVtk1gwKr.DnaDt1vtaWsoQqvuWr.string_9 ?? ""))
+	{
+		if (global::System.IO.File.Exists(global::CommonServiceLocator.ServiceLocator.Current.GetInstance<global::JkmnBj5dymNkrSKZfj.CaQBeiDnsuUiMrCCcY>().method_2() + "\\" + global::xghqTGbJNBVtk1gwKr.DnaDt1vtaWsoQqvuWr.string_2 + ".exe"))
+		{
+			this.TanChuKaiShiYouXi.IsOpen = false;
+			this.KaiShiYouXi.IsEnabled = true;
+		}
+		else if (global::System.IO.File.Exists(global::CommonServiceLocator.ServiceLocator.Current.GetInstance<global::JkmnBj5dymNkrSKZfj.CaQBeiDnsuUiMrCCcY>().method_2() + "\\data_steam"))
+		{
+			this.method_5();
+			this.method_12();
+		}
+		else
+		{
+			global::System.Windows.MessageBox.Show("激活失败,目标丢失,请加测文件完整性,或者目标文件被杀毒软件误删.", "系统提示", global::System.Windows.MessageBoxButton.OK, global::System.Windows.MessageBoxImage.Asterisk);
+		}
+	}
+	else if (global::xghqTGbJNBVtk1gwKr.DnaDt1vtaWsoQqvuWr.string_19.Length == 0xA || global::xghqTGbJNBVtk1gwKr.DnaDt1vtaWsoQqvuWr.string_19.Length == 0x10)
+	{
+		if (global::JkmnBj5dymNkrSKZfj.CaQBeiDnsuUiMrCCcY.smethod_6() != "WLCW")
+		{
+			global::xghqTGbJNBVtk1gwKr.DnaDt1vtaWsoQqvuWr.LM9E8V6MePutCdy8Ei lm9E8V6MePutCdy8Ei = new global::xghqTGbJNBVtk1gwKr.DnaDt1vtaWsoQqvuWr.LM9E8V6MePutCdy8Ei();
+			lm9E8V6MePutCdy8Ei.dnaDt1vtaWsoQqvuWr_0 = this;
+			lm9E8V6MePutCdy8Ei.string_0 = this.method_10(this.method_9() + this.method_8());
+			this.method_5();
+			global::System.Threading.Tasks.Task.Run(new global::System.Action(lm9E8V6MePutCdy8Ei.method_0)).ContinueWith(new global::System.Action<global::System.Threading.Tasks.Task>(this.method_17));
+		}
+		else
+		{
+			global::System.Windows.MessageBox.Show("请输入固定密码", "温馨提醒");
+		}
+	}
+	else
+	{
+		global::System.Windows.MessageBox.Show("请输入正确激活码", "温馨提醒");
+	}
+}
+```
+
+其中关键操作：
+
+```c#
+this.method_5();
+this.method_12();
+```
+
+所以只需要修改成：
+
+```c#
+// xghqTGbJNBVtk1gwKr.DnaDt1vtaWsoQqvuWr
+private void method_7(object sender, global::System.Windows.RoutedEventArgs e)
+{
+	this.method_5();
+	this.method_12();
+}
+```
+
+**不要忘记保存模块和保存时设置勾选“保持之前的MaxStack值”**
+
