@@ -6,11 +6,11 @@
 
 打开de4dot-All-Version-2021文件夹中的De4Dot ToolKit V 2.02222.exe
 
-![image-20230728121559709](http://sapic.lyh27.top/static/upload/admin/image-20230728121559709.png)
+![image-20230728121559709](https://immich.lyh27.top/api/assets/38078b6a-fcd4-431f-9b08-0ae4b5a94f20/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8)
 
 根据系统位数选择x64或x32，然后在下拉菜单中选择de4dot_Latest，最后将.exe拖入框中，弹出cmd窗口并如下图显示即说明脱壳完成。
 
-![image-20230921150521907](http://sapic.lyh27.top/static/upload/admin/image-20230921150521907.png)
+![image-20230921150521907](https://immich.lyh27.top/api/assets/3b03108d-0eb1-4e32-b14c-ae5792f68d49/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8)
 
 脱壳后的exe文件在同一个目录下。
 
@@ -18,11 +18,11 @@
 
 打开Dnspy，在Dnspy中打开脱壳后的exe文件，右键资源中的dll，选择保存**.dll，将资源中的dll保存到磁盘上
 
-<img src="http://sapic.lyh27.top/static/upload/admin/image-20230728130040121.png" alt="image-20230728130040121" style="zoom: 80%;" />
+<img src="https://immich.lyh27.top/api/assets/4291330c-b8b1-4706-b814-d29e6276c3b5/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8" alt="image-20230728130040121" style="zoom: 80%;" />
 
 再将保存后的dll文件全部用Dnspy打开，如下图：
 
-<img src="http://sapic.lyh27.top/static/upload/admin/image-20230728130237477.png" style="zoom: 80%;" />
+<img src="https://immich.lyh27.top/api/assets/fb7ea187-4b97-4896-bda8-67e9ef7d55a8/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8" style="zoom: 80%;" />
 
 ## ③反编译
 
@@ -32,9 +32,9 @@
 
 找到**程序名.JiHuoA.LiJiJiHuo_Click()**函数
 
-<img src="http://sapic.lyh27.top/static/upload/admin/image-20230921151315792.png" alt="image-20230921151315792" style="zoom:80%;" />
+<img src="https://immich.lyh27.top/api/assets/d8469c21-23b0-402f-b21d-83d68a2e2cfb/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8" alt="image-20230921151315792" style="zoom:80%;" />
 
-<img src="http://sapic.lyh27.top/static/upload/admin/image-20230921151438820.png" alt="image-20230921151438820" style="zoom:80%;" />
+<img src="https://immich.lyh27.top/api/assets/17961c3a-3770-4635-baf5-f301ae898868/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8" alt="image-20230921151438820" style="zoom:80%;" />
 
 其中关键代码为：
 
@@ -89,11 +89,11 @@ namespace JiHuoA
 
 修改好代码，点击编译，点击左上角的文件，选择**保存模块**，再按F5调试程序，程序打开后，提示输入激活码，不用管，直接点击确定，再点击“启动方式”按钮，选择创建快捷方式就可以了。
 
-![image-20230921152336043](http://sapic.lyh27.top/static/upload/admin/image-20230921152336043.png)
+![image-20230921152336043](https://immich.lyh27.top/api/assets/d17bc0a8-174b-4d9b-a51a-5c0e418c44e5/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8)
 
-![image-20230921152137342](http://sapic.lyh27.top/static/upload/admin/image-20230921152137342.png)
+![image-20230921152137342](https://immich.lyh27.top/api/assets/a3dcec14-5d8e-4fbf-8081-3db4c5a85a6b/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8)
 
-![image-20230921152210445](http://sapic.lyh27.top/static/upload/admin/image-20230921152210445.png)
+![image-20230921152210445](https://immich.lyh27.top/api/assets/d4af8495-9936-45b4-8055-bd58721a731e/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8)
 
 注意：最新版的启动器使用IntelliLock加壳，反编译的时候出现方法名混乱的情况，其实只需要删除反混淆生成的代码，同时修改LiJiJiHuo_Click()函数如下图所示：
 
@@ -113,21 +113,21 @@ public partial class JiHuo : CustomDialog, IComponentConnector
 
 对于更新时间为2021年及以前的游戏，安装包加密方式有所区别，如果在解压的时候提示激活码
 
-![image-20230921161148325](http://sapic.lyh27.top/static/upload/admin/image-20230921161148325.png)
+![image-20230921161148325](https://immich.lyh27.top/api/assets/8ee9bc47-d800-4eea-b9c5-eb99b839524e/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8)
 
 那么需要另一个工具InnoExtractor进行提取游戏文件：
 
-<img src="http://sapic.lyh27.top/static/upload/admin/image-20230921161212698.png" alt="image-20230921161212698" style="zoom: 67%;" />
+<img src="https://immich.lyh27.top/api/assets/e4910746-29b4-4fe2-bc79-06fd7af948fc/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8" alt="image-20230921161212698" style="zoom: 67%;" />
 
 将exe文件拖入进去，加载的时间很长，需要耐心等待，加载完成后如下图：
 
-<img src="http://sapic.lyh27.top/static/upload/admin/image-20230921161448275.png" alt="image-20230921161448275" style="zoom:80%;" />
+<img src="https://immich.lyh27.top/api/assets/fd80aab5-fbe7-40e6-9ab7-4609e0dcd8ae/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8" alt="image-20230921161448275" style="zoom:80%;" />
 
 点击上方提取并设置提取路径，最后点击确定
 
-![image-20230921161547245](http://sapic.lyh27.top/static/upload/admin/image-20230921161547245.png)
+![image-20230921161547245](https://immich.lyh27.top/api/assets/b351203e-b452-4c66-86a1-0e821ad76f70/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8)
 
-![image-20230921161627722](http://sapic.lyh27.top/static/upload/admin/image-20230921161627722.png)
+![image-20230921161627722](https://immich.lyh27.top/api/assets/ff6f4389-1181-4783-ab74-edc9dcabdc04/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8)
 
 
 
@@ -137,7 +137,7 @@ public partial class JiHuo : CustomDialog, IComponentConnector
 
 使用NETReactor中的NETReactorSlayer
 
-![image-20230924210608762](http://sapic.lyh27.top/static/upload/admin/image-20230924210608762.png)
+![image-20230924210608762](https://immich.lyh27.top/api/assets/288d7d4e-42f1-48d1-9ca0-61be095bef46/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8)
 
 框选部分点击后，取消选择Namespaces与Types
 
@@ -148,15 +148,15 @@ public partial class JiHuo : CustomDialog, IComponentConnector
 注：找的过程中，可以看类中有没有KaiShiYouXi_Click()这个函数，如果有，那么大概率激活解压函数就在这个类当中
 
 例如为存档菜单绑定解压事件：
-![image-20230924210833694](http://sapic.lyh27.top/static/upload/admin/image-20230924210833694.png)
+![image-20230924210833694](https://immich.lyh27.top/api/assets/8ffe1283-d3a2-4278-983b-c7d420834a6d/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8)
 
 编译后保存模块时，如果报错：
-![image-20230924210857485](http://sapic.lyh27.top/static/upload/admin/image-20230924210857485.png)
+![image-20230924210857485](https://immich.lyh27.top/api/assets/b944b0cd-d2aa-4f0e-ac04-80e28179e7d5/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8)
 
 则需要保存模块时这样设置：
 
 
-![image-20230924211000106](http://sapic.lyh27.top/static/upload/admin/image-20230924211000106.png)
+![image-20230924211000106](https://immich.lyh27.top/api/assets/1a1c2e87-0669-4ed9-bbaa-67e623e02a46/thumbnail?size=preview&key=25V6Vu9F_RRr2dJRHv9neJzgAYlcc4v8m9nc51VCXZcwhXYMn8GwtfaJuVsBitUCJq8)
 
 还有一种情况：
 
